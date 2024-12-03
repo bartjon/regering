@@ -22,7 +22,7 @@
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        .days-difference {
+        .days-difference, .percentage {
             font-size: 3vw;
             margin-top: 20px;
         }
@@ -33,12 +33,17 @@
             const today = new Date();
             const differenceInTime = today - eventDate;
             const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+            const maxDays = 541; // Reference number of days
+            const percentage = ((differenceInDays / maxDays) * 100).toFixed(2);
+
             document.getElementById('days').textContent = differenceInDays;
+            document.getElementById('percentage').textContent = percentage;
         };
     </script>
 </head>
 <body>
     <div class="state">NEE</div>
-    <div class="days-difference">Al <span id="days"></span> dagen zonder nieuwe regering.</div>
+    <div class="days-difference">Het is <span id="days"></span> dagen geleden.</div>
+    <div class="percentage">Dat is <span id="percentage"></span>% van ons oud record.</div>
 </body>
 </html>
