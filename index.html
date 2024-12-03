@@ -8,21 +8,37 @@
         body {
             margin: 0;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
             color: white;
             font-family: 'Arial', sans-serif;
-            font-size: 10vw;
-            font-weight: bold;
+            text-align: center;
         }
         .state {
+            font-size: 10vw;
+            font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
+        .days-difference {
+            font-size: 3vw;
+            margin-top: 20px;
+        }
     </style>
+    <script>
+        window.onload = function() {
+            const eventDate = new Date('2024-06-09');
+            const today = new Date();
+            const differenceInTime = today - eventDate;
+            const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+            document.getElementById('days').textContent = differenceInDays;
+        };
+    </script>
 </head>
 <body>
     <div class="state">NEE</div>
+    <div class="days-difference">Al <span id="days"></span> dagen zonder nieuwe regering.</div>
 </body>
 </html>
