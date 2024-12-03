@@ -35,7 +35,7 @@
             const differenceInTime = today - eventDate;
             const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
             const maxDays = 541; // Reference number of days
-            const percentage = ((differenceInDays / maxDays) * 100).toFixed(2);
+            const percentage = ((differenceInDays / maxDays) * 100).toFixed(0);
 
             document.getElementById('days').textContent = differenceInDays;
             document.getElementById('percentage').textContent = percentage;
