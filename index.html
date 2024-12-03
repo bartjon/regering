@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Is er een regering?</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2232%22 font-size=%2232%22>❓</text></svg>">
     <style>
         body {
             margin: 0;
@@ -34,7 +35,7 @@
             const differenceInTime = today - eventDate;
             const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
             const maxDays = 541; // Reference number of days
-            const percentage = ((differenceInDays / maxDays) * 100).toFixed(0);
+            const percentage = ((differenceInDays / maxDays) * 100).toFixed(2);
 
             document.getElementById('days').textContent = differenceInDays;
             document.getElementById('percentage').textContent = percentage;
@@ -44,6 +45,6 @@
 <body>
     <div class="state">NEE</div>
     <div class="days-difference">Het is <span id="days"></span> dagen geleden.</div>
-    <div class="percentage">Dat is <span id="percentage"></span>% van ons oud record.</div>
+    <div class="percentage">Dat is <span id="percentage"></span>% van ons oude record.</div>
 </body>
 </html>
