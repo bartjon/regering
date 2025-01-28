@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-6152560424663934">
+    <title>Is er een regering?</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><text y=%2232%22 font-size=%2232%22>✅</text></svg>">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #4CAF50, #2E7D32);
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+        .state {
+            font-size: 10vw;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .days-difference, .percentage {
+            font-size: 3vw;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        window.onload = function() {
+            const eventDate = new Date('2025-01-28');
+            const today = new Date();
+            const differenceInTime = today - eventDate;
+            const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
+            
+            document.getElementById('days').textContent = differenceInDays;
+        };
+    </script>
+</head>
+<body>
+    <div class="state">JA</div>
+    <div class="days-difference">Al <span id="days"></span> dagen met een nieuwe federale regering!</div>
+</body>
+</html>
