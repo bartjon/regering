@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +14,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: linear-gradient(135deg, #ff4d4d, #ff1a1a);
+            background-color: orange;
             color: white;
             font-family: 'Arial', sans-serif;
             text-align: center;
@@ -24,28 +24,33 @@
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
-        .days-difference, .percentage {
+        .subtext {
+            font-size: 2vw;
+            margin-top: 20px;
+        }
+        .days-difference {
             font-size: 3vw;
-            margin-top: 10px;
+            margin-top: 20px;
         }
     </style>
     <script>
         window.onload = function() {
             const eventDate = new Date('2024-06-09');
-            const today = new Date();
+            const today = new Date('2025-01-31'); // Stop at today's date (31/1/2025)
             const differenceInTime = today - eventDate;
             const differenceInDays = Math.floor(differenceInTime / (1000 * 60 * 60 * 24));
-            const maxDays = 541; // Reference number of days
-            const percentage = ((differenceInDays / maxDays) * 100).toFixed(0);
 
             document.getElementById('days').textContent = differenceInDays;
-            document.getElementById('percentage').textContent = percentage;
         };
     </script>
 </head>
 <body>
-    <div class="state">NEE</div>
-    <div class="days-difference">Al <span id="days"></span> dagen zonder nieuwe federale regering.</div>
-    <div class="percentage">Dat is <span id="percentage"></span>% van ons oude record.</div>
+    <div class="state">MISSCHIEN</div>
+    <div class="subtext">
+        Er is een regeerakkoord tussen NVA, CD&V, Vooruit, MR en Les Engagés. </br> Dit weekend wordt bij alle aanstaande regeringspartijen het akkoord voorgelegd ter goedkeuring. </br>Op deze congressen kunnen de leden alsnog het akkoord verwerpen.
+    </div>
+    <div class="days-difference">
+        Het duurde <span id="days"></span> dagen om tot een akkoord te komen.
+    </div>
 </body>
 </html>
